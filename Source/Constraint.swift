@@ -166,7 +166,7 @@ public final class Constraint {
             layoutConstraint.label = self.label
 
             // set priority
-            layoutConstraint.priority = self.priority.constraintPriorityTargetValue
+            layoutConstraint.priority = UILayoutPriority(rawValue: self.priority.constraintPriorityTargetValue)
 
             // set constraint
             layoutConstraint.constraint = self
@@ -244,7 +244,7 @@ public final class Constraint {
 
             let requiredPriority = ConstraintPriority.required.value
             if (layoutConstraint.priority < requiredPriority), (self.priority.constraintPriorityTargetValue != requiredPriority) {
-                layoutConstraint.priority = self.priority.constraintPriorityTargetValue
+                layoutConstraint.priority = UILayoutPriority(rawValue: self.priority.constraintPriorityTargetValue)
             }
         }
     }
